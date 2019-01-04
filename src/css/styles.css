@@ -1,0 +1,32 @@
+/**
+ * General Tags Styles.
+ */
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #000;
+  overflow-x: hidden; /* Hide horizontal overflow. */
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Make images responsive to their containers */
+img {
+  width: 100%;
+  height: auto;
+}
