@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/model-nav.css">
     <link rel="stylesheet" href="./css/main-billboard.css">
+    <link rel="stylesheet" href="./css/vehicle-details.css">
     <!-- endbuild -->
 
   </head>
@@ -176,15 +177,23 @@
     <!-- Main Billboard container end -->
 
     <!-- Vehicle details start -->
-    <section>
+    <section class="flex flex--column vehicle-details">
 
       <!-- Vehicle details navigation start -->
-      <nav>
-        <ul>
-          <li><button>Dimensions</button></li>
-          <li><button>Vehicle Layouts</button></li>
-          <li><button>Colour</button></li>
-          <li><button>Interior Trim</button></li>
+      <nav class="vehicle-details__nav">
+        <ul class="text--center flex">
+          <li class="vehicle-details__nav__item">
+            <button class="btn btn--white vehicle-details__nav__btn is-active">Dimensions</button>
+          </li>
+          <li class="vehicle-details__nav__item">
+            <button class="btn btn--white vehicle-details__nav__btn">Vehicle Layouts</button>
+          </li>
+          <li class="vehicle-details__nav__item">
+            <button class="btn btn--white vehicle-details__nav__btn">Colour</button>
+          </li>
+          <li class="vehicle-details__nav__item">
+            <button class="btn btn--white vehicle-details__nav__btn">Interior Trim</button>
+          </li>
         </ul>
       </nav>
       <!-- Vehicle details navigation end -->
@@ -330,7 +339,7 @@
 
       <!-- View offers button container start -->
       <div>
-        <button>
+        <button class="btn">
           View our <span>Versa Connect</span> offers
         </button>
       </div>
@@ -354,7 +363,7 @@
 
       <!-- View offers button container start -->
       <div>
-        <button>
+        <button class="btn">
           View our <span>Versa Connect</span> offers
         </button>
       </div>

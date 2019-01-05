@@ -75,6 +75,10 @@ button {
   text-align: right !important;
 }
 
+.text--center {
+  text-align: center !important;
+}
+
 .text--shadow {
   transition: text-shadow 0.25s ease-in;
 }
@@ -124,14 +128,15 @@ button {
 
 .btn--white {
   font-weight: 600;
-  color: #01487f;
+  color: #6666ff;
   background-color: #fff;
-  border-color: #999;
+  border-color: #6666ff;
 }
 
 .btn--white:hover, .btn--white:focus {
   color: #fff;
-  background-color: #01487f;
+  background-color: #013a65;
+  border-color: #013a65;
 }
 
 /* Card container */
