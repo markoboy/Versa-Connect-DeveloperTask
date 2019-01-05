@@ -29,7 +29,7 @@ ul {
 /* Make images responsive to their containers */
 img {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 /* Reset buttons styles */

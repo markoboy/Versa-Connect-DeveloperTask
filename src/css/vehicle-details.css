@@ -71,3 +71,14 @@
 .dimensions__table__short {
   border-left-color: transparent;
 }
+
+/* Vehicle details layout container styles */
+.layout__paragraph {
+  margin-top: 0; /* Remove top padding because of the image space */
+}
+
+.layout__image {
+  /* Layout image must have normal size and max-width in order to be responsive */
+  width: auto;
+  max-width: 100%;
+}
