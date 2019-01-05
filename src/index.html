@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="./css/model-nav.css">
     <link rel="stylesheet" href="./css/main-billboard.css">
     <link rel="stylesheet" href="./css/vehicle-details.css">
+    <link rel="stylesheet" href="./css/vehicle-gallery.css">
     <!-- endbuild -->
 
   </head>
@@ -399,10 +400,19 @@
     </section>
     <!-- vehicle details end -->
     
-    <!-- Vehicle image galery slider start -->
-    <section>
+    <!-- Vehicle image gallery slider start -->
+    <section class="vehicle-gallery">
+      <button class="vehicle-gallery__btn vehicle-gallery__btn--left">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="vehicle-gallery__btn vehicle-gallery__btn--right">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <p class="vehicle-gallery__status">
+        <span id="vehicle-gallery-current">1</span> / <span id="vehicle-gallery-total">3</span>
+      </p>
     </section>
-    <!-- Vehicle image galery slider end -->
+    <!-- Vehicle image gallery slider end -->
     
     <!-- Vehicle long description start -->
     <section>

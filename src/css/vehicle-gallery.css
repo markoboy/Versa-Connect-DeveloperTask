@@ -1,0 +1,46 @@
+/**
+ * Vehicle gallery slider styles
+ */
+.vehicle-gallery {
+  min-height: 82vh;
+  background: url('../images/vehicle_interior.jpg');
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+}
+
+.vehicle-gallery__btn {
+  font-size: 4.5em;
+  color: #aaa;
+  border-color: transparent;
+  background-color: transparent;
+  
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.vehicle-gallery__btn--left {
+  left: 0;
+  margin-left: 0.3em;
+}
+
+.vehicle-gallery__btn--right {
+  right: 0;
+  margin-right: 0.3em;
+}
+
+.vehicle-gallery__btn:hover, .vehicle-gallery__btn:focus {
+  color: #fff;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.vehicle-gallery__status {
+  color: #ccc;
+  position: absolute;
+  margin: 0;
+  bottom: 5%;
+  left: 50%; /* Center to the bottom */
+  transform: translate(-50%, 0)
+}
