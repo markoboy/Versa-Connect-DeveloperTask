@@ -1,0 +1,94 @@
+/**
+ * Model top navigation container styles
+ */
+.model-nav__container {
+  font-size: 1.1em;
+  font-weight: 550;
+  color: white;
+  background-color: #013a65;
+}
+
+.model-nav__listbox__wrapper {
+  margin: 1em 1.7em;
+}
+
+.listbox__btn {
+  background-color: inherit;
+  padding: 0.1em 2em 0.1em 0.3em;
+
+  position: relative; /* Relative position for the arrow */
+}
+
+.listbox__btn:hover, .listbox__btn:focus {
+  color: #013a65;
+}
+
+/* Create a pseudo element to show an arrow after the listbox button */
+.listbox__btn::after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0.3em; /* 0.3em to be aligned the same as the left padding */
+  border: 5px solid;
+  border-color: white transparent transparent transparent;
+  transition: border-color 0.25s ease-in;
+}
+
+.listbox__btn:hover::after, .listbox__btn:focus::after {
+  border-color: #013a65 transparent transparent transparent;
+}
+
+/* Vehicle navigation */
+.vehicle-nav {
+  flex-grow: 1;
+  align-self: flex-end;
+}
+
+.vehicle-nav__item {
+  display: inline-block;
+}
+
+.vehicle-nav__item + .vehicle-nav__item {
+  margin-left: 0.8em;
+}
+
+.vehicle-nav__item:last-child {
+  margin-right: 2em;
+}
+
+.vehicle-nav__item__link {
+  background-color: inherit;
+  padding: 1em 1.2em;
+
+  position: relative; /* Relative position for bottom border */
+}
+
+/* Reset hover and focus styles */
+.vehicle-nav__item__link:hover, .vehicle-nav__item__link:focus {
+  background-color: inherit;
+  color: inherit;
+  border-color: transparent;
+}
+
+/* Add a bottom border */
+.vehicle-nav__item__link::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  border-bottom: 5px solid white;
+  left: 0;
+  bottom: 0;
+
+  transform: scaleX(0); /* Scale to 0 for making nice transition on hover */
+  transition: transform 0.25s ease-in;
+}
+
+.vehicle-nav__item__link:hover::after, .vehicle-nav__item__link:focus::after {
+  transform: scaleX(1);
+}
+
+.vehicle-nav__item__link.is-active::after {
+  transform: scaleX(1);
+}

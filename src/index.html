@@ -20,6 +20,7 @@
     <!-- build:css css/styles.min.css -->
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/model-nav.css">
     <!-- endbuild -->
 
   </head>
@@ -100,31 +101,32 @@
     <!-- Header end -->
 
     <!-- Model top navigation start -->
-    <section>
+    <section class="model-nav__container flex">
 
       <!-- Model listbox selection start -->
-      <div>
-        <!-- TODO: Change hidden with a class is-hidden -->
-        <span id="car-model__desc" hidden>
-          Choose a car model:
+      <div class="flex flex--center-align">
+        <span id="vehicle-model__desc" class="is-hidden">
+          Choose a vehicle model:
         </span>
 
         <!-- Model listbox wrapper start -->
-        <div>
+        <div class="model-nav__listbox__wrapper">
           <button
               aria-haspopup="listbox"
-              aria-labelledby="car-model__desc car-model__button"
-              id="car-model__button">
+              aria-labelledby="vehicle-model__desc vehicle-model__button"
+              id="vehicle-model__button"
+              class="btn listbox__btn">
             Versa Connect
           </button>
-        
+
+          <!-- TODO: Select model from custom droplist with JS -->
           <ul
-              id="car-model__listbox"
+              id="vehicle-model__listbox"
               tabindex="-1"
               role="listbox"
-              aria-labelledby="car-model__desc"
-              hidden>
-            <li id="car-model-VC" role="option" aria-selected="true">Versa Connect</li>
+              aria-labelledby="vehicle-model__desc"
+              class="is-hidden">
+            <li id="vehicle-model-VC" role="option" aria-selected="true">Versa Connect</li>
           </ul>
         </div>
         <!-- Model listbox wrapper end -->
@@ -132,16 +134,25 @@
       </div>
       <!-- Model listbox selection end -->
 
-      <!-- Model navigation start -->
-      <nav>
-        <ul>
-          <li><a href="#">Overview</a></li>
-          <li><a href="#">Offers</a></li>
-          <li><a href="#">Models</a></li>
-          <li><a href="#">Optional Extras</a></li>
+      <!-- Vehicle navigation start -->
+      <nav class="vehicle-nav">
+        <ul class="text--right">
+          <!-- TODO: Handle is-active with JS -->
+          <li class="vehicle-nav__item">
+            <a href="#" class="btn vehicle-nav__item__link is-active">Overview</a>
+          </li>
+          <li class="vehicle-nav__item">
+            <a href="#" class="btn vehicle-nav__item__link">Offers</a>
+          </li>
+          <li class="vehicle-nav__item">
+            <a href="#" class="btn vehicle-nav__item__link">Models</a>
+          </li>
+          <li class="vehicle-nav__item">
+            <a href="#" class="btn vehicle-nav__item__link">Optional Extras</a>
+          </li>
         </ul>
       </nav>
-      <!-- Model navigation end -->
+      <!-- Vehicle navigation end -->
 
     </section>
     <!-- Model top navigation end -->
@@ -149,7 +160,7 @@
     <!-- Main Billboard container start -->
     <section>
 
-      <!-- Main car description start -->
+      <!-- Main vehicle description start -->
       <div>
         <h2>Versa Connect</h2>
         <p>
@@ -157,15 +168,15 @@
         </p>
         <button>Make an Enquiry</button>
       </div>
-      <!-- Main car description end -->
+      <!-- Main vehicle description end -->
 
     </section>
     <!-- Main Billboard container end -->
 
-    <!-- Car details start -->
+    <!-- Vehicle details start -->
     <section>
 
-      <!-- Car details navigation start -->
+      <!-- Vehicle details navigation start -->
       <nav>
         <ul>
           <li><button>Dimensions</button></li>
@@ -174,10 +185,10 @@
           <li><button>Interior Trim</button></li>
         </ul>
       </nav>
-      <!-- Car details navigation end -->
+      <!-- Vehicle details navigation end -->
 
       <!-- TODO: Change dynamically all 4 vehicles details with JavaScript -->
-      <!-- Car details dimensions start -->
+      <!-- Vehicle details dimensions start -->
       <article>
 
         <!-- Dimensions table start -->
@@ -207,7 +218,7 @@
         <!-- Dimensions image end -->
 
       </article>
-      <!-- Car details dimensions end -->
+      <!-- Vehicle details dimensions end -->
 
       <!-- Vehicle layouts details start -->
       <article>
@@ -324,7 +335,7 @@
       <!-- View offers button container end -->
       
     </section>
-    <!-- Car details end -->
+    <!-- vehicle details end -->
     
     <!-- Vehicle image galery slider start -->
     <section>

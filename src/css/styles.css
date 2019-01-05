@@ -17,7 +17,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #000;
+  color:inherit;
 }
 
 ul {
@@ -45,6 +45,7 @@ button {
 /**
  * General class styles
  */
+/* Flexbox styles */
 .flex {
   display: flex;
 }
@@ -69,6 +70,7 @@ button {
   justify-content: space-around;
 }
 
+/* Text styles */
 .text--right {
   text-align: right !important;
 }
@@ -130,4 +132,9 @@ button {
 .btn--white:hover, .btn--white:focus {
   color: #fff;
   background-color: #01487f;
+}
+
+/* State modifiers */
+.is-hidden {
+  display: none;
 }
