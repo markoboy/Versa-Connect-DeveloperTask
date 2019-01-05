@@ -29,7 +29,7 @@ ul {
 /* Make images responsive to their containers */
 img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 /* Reset buttons styles */
@@ -71,6 +71,10 @@ button {
 }
 
 /* Text styles */
+.text--left {
+  text-align: left !important;
+}
+
 .text--right {
   text-align: right !important;
 }

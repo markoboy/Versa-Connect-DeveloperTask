@@ -37,3 +37,37 @@
 .vehicle-details__nav__item:last-child .vehicle-details__nav__btn{
   border-radius: 0 4px 4px 0;
 }
+
+/* Vehicle details dimensions container styles */
+.vehicle-details__dimensions {
+  margin-bottom: 2em;
+}
+
+/* Set the dimensions table and image to 50% each */
+.dimensions__table, .dimensions__image-container {
+  width: 50%;
+}
+
+.dimensions__table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-right: 2em;
+}
+
+.dimensions__table td, .dimensions__table th {
+  padding: 1em;
+}
+
+.dimensions__table__heading, .dimensions__table__short, .dimensions__table__long {
+  border: 1px solid #999;
+}
+
+.dimensions__table__heading {
+  font-weight: 550;
+  background-color: #e0e0e0;
+  border-right-color: transparent;
+}
+
+.dimensions__table__short {
+  border-left-color: transparent;
+}
