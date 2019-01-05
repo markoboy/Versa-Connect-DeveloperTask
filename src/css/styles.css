@@ -9,7 +9,7 @@ html, body {
 
 body {
   font-family: 'Roboto', sans-serif;
-  line-height: 1.6;
+  line-height: 1.5;
   color: #000;
   background-color: #eee;
   overflow-x: hidden; /* Hide horizontal overflow. */
@@ -94,7 +94,7 @@ button {
 
   padding: 0em 0.2em;
   color: #fff;
-  background-color: #016cbd;
+  background-color: #0282e3;
 
   transition: color 0.25s ease-in,
     background-color 0.25s ease-in,
@@ -107,8 +107,8 @@ button {
 }
 
 .btn:hover, .btn:focus {
-  color: #016cbd;
-  border-color: #016cbd;
+  color: #0282e3;
+  border-color: #0282e3;
   background-color: #fff;
 }
 
@@ -132,6 +132,29 @@ button {
 .btn--white:hover, .btn--white:focus {
   color: #fff;
   background-color: #01487f;
+}
+
+/* Card container */
+.card-container {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.83), rgba(255, 255, 255, 0.9));
+  max-width: 300px;
+  padding: 0 2em 2em;
+}
+
+.card-container__heading {
+  font-weight: bolder;
+  font-size: 2.2em;
+  line-height: 1;
+  margin-bottom: 0em;
+}
+
+.card-container__paragraph {
+  font-size: 1em;
+}
+
+.card-container__btn {
+  width: 100%;
+  padding: 1em 0;
 }
 
 /* State modifiers */

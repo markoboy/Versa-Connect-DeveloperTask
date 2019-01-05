@@ -1,0 +1,10 @@
+/**
+ * Main Billboard container styles.
+ */
+.main-bb__container {
+  min-height: 65vh;
+  background-image: url(../images/main_billboard.jpg); /* TODO: Add image with JS after loading */
+  background-size: cover;
+  background-position: center;
+  padding: 2em 9em;
+}
