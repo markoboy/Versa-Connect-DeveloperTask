@@ -43,6 +43,10 @@
   margin-bottom: 2em;
 }
 
+.dimensions__image-container {
+  padding-top: 1em;
+}
+
 /* Set the dimensions table and image to 50% each */
 .dimensions__table, .dimensions__image-container {
   width: 50%;
