@@ -166,3 +166,62 @@
   margin: 0;
   padding: 1em 0;
 }
+
+/* Vehicle details interior trim container styles */
+.interior-trim__top-image {
+  min-height: 345px;
+  background: url('../images/vehicle_interior.jpg');
+  background-size: cover;
+  background-position: 50% 25%;
+  margin-bottom: 0.6em;
+}
+
+.interior-trim__list__item + .interior-trim__list__item {
+  margin-left: 1.5em;
+}
+
+.interior-trim__checkbox__container {
+  cursor: pointer;
+}
+
+.interior-trim__description__heading {
+  margin: 1em 0 0.5em;
+}
+
+.interior-trim__description__paragraph {
+  margin: 0;
+  font-size: 0.95em;
+}
+
+.interior-trim__checkbox {
+  align-self: center;
+}
+
+.interior-trim__checkbox__btn {
+  width: 34px;
+  height: 34px;
+  font-size: 1.2em;
+  padding: 0.2em;
+  color: transparent;
+  background-color: #fff;
+  border: 1.3px solid;
+  border-color: #999;
+  border-radius: 0;
+}
+
+/* Change style when checkbox or checkbox__container is hovered|focused */
+.interior-trim__checkbox__btn:hover,
+.interior-trim__checkbox__btn:focus,
+.interior-trim__checkbox__container:hover .interior-trim__checkbox__btn,
+.interior-trim__checkbox__container:focus .interior-trim__checkbox__btn {
+  color: #666;
+  background-color: transparent;
+  border-color: #999;
+}
+
+/* Set the styles when the checkbox is checked */
+.interior-trim__checkbox__container[aria-checked=true] .interior-trim__checkbox__btn {
+  color: #fff;
+  background-color: #bbb;
+  border-color: #bbb;
+}

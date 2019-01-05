@@ -337,34 +337,44 @@
       <!-- Vehicle color container end -->
 
       <!-- Vehicle interior trim container start -->
-      <article>
+      <article class="flex flex--column vehicle-details__interior-trim">
         <!-- Interior trim top image start -->
-        <div></div>
+        <div class="interior-trim__top-image"></div>
         <!-- Interior trim top image end -->
 
         <!-- Interior trim material checkboxes start -->
         <div role="group" aria-label="Interior trim">
-          <ul>
-            <li>
+          <ul class="flex flex--space-between">
+            <li class="interior-trim__list__item">
 
               <!-- Interior trim material checkbox start -->
-              <div role="checkbox" aria-checked="false" tabindex="0" aria-label="Titanium. Insert: blbl. Bolster: .">
+              <div class="interior-trim__checkbox__container" role="checkbox" aria-checked="false" tabindex="0" aria-label="Titanium. Insert: blbl. Bolster: .">
                 <!-- Interior trim material image start -->
-                <div></div>
+                <div>
+                  <img src="./images/vehicle_interior_titanium.jpg" alt="Titanium trim">
+                </div>
                 <!-- Interior trim material image end -->
 
                 <!-- Interior trim material details wrapper start -->
-                <div>
+                <div class="flex flex--space-between">
                   <!-- Interior trim material description start -->
                   <div>
-                    <h4>Titanium</h4>
-                    <p>Insert: <span></span></p>
-                    <p>Bolster: <span></span></p>
+                    <h4 class="interior-trim__description__heading">Titanium</h4>
+                    <p class="interior-trim__description__paragraph">
+                      Insert: <span>Chicane in Medium Stone</span>
+                    </p>
+                    <p class="interior-trim__description__paragraph">
+                      Bolster: <span>Malt in Medium Stone</span>
+                    </p>
                   </div>
                   <!-- Interior trim material description end -->
 
                   <!-- Interior trim material checkbox container start -->
-                  <div></div>
+                  <div class="interior-trim__checkbox">
+                    <button class="btn interior-trim__checkbox__btn" tabindex="-1">
+                      <i class="fas fa-check"></i>
+                    </button>
+                  </div>
                   <!-- Interior trim material checkbox container end -->
                 </div>
                 <!-- Interior trim material details wrapper end -->
