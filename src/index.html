@@ -13,53 +13,82 @@
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
     <!-- CSS styles -->
     <!-- build:css css/styles.min.css -->
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/header.css">
     <!-- endbuild -->
 
   </head>
   <body>
 
     <!-- Header start -->
-    <header>
+    <header class="header flex">
 
       <!-- Header logo start -->
-      <div>Logo</div>
+      <div class="header__logo-container flex flex--center-align">
+        <a href="#">
+          <img src="./images/logo.png" alt="Bristol Street Versa Mobility Solutions logo">
+        </a>
+      </div>
       <!-- Header logo end -->
 
       <!-- Header wrapper start -->
-      <div>
+      <div class="header__nav-wrapper flex flex--column">
 
         <!-- Header navigation top start -->
-        <nav>
-          <ul>
-            <li>
-              Contrast <button>A</button><button>A</button>
+        <nav class="header__nav-top">
+          <ul class="nav-top__list text--right">
+            <li class="nav-top__list__item">
+              Contrast
+              <button class="nav-top__item__contrast is-active btn btn--white">A</button>
+              <button class="nav-top__item__contrast btn btn--white">A</button>
             </li>
-            <li>
-              Font Size <button>A -</button><button>A</button><button>A +</button>
+            <li class="nav-top__list__item">
+              Font Size
+              <button class="btn btn--white">A-</button>
+              <button class="btn btn--white">A</button>
+              <button class="btn btn--white">A+</button>
             </li>
-            <li>
-              <a href="#">Download a Brochure</a>
+            <li class="nav-top__list__item">
+              <a href="#" class="text--shadow">Download a Brochure</a>
             </li>
-            <li>
-              <a href="#">Blog</a>
+            <li class="nav-top__list__item">
+              <a href="#" class="text--shadow">Blog</a>
             </li>
-            <li><a href="tel:03300425909">Call us on 0330 042 5909</a></li>
+            <li class="nav-top__list__item">
+              <a href="tel:03300425909" class="nav-top__item__contact btn btn--green">
+                <i class="contact__phone fas fa-phone"></i>
+                <span class="contact__text">Call us on 0330 042 5909</span>
+                <!-- Regular circle requires pro -->
+                <i class="contact__info fas fa-info-circle"></i>
+              </a>
+            </li>
           </ul>
         </nav>
         <!-- Header navigation top end -->
         
         <!-- Header navigation bottom start -->
-        <nav>
-          <ul>
-            <li><a href="#">New Vehicles</a></li>
-            <li><a href="#">Nearly New/Used Vehicles</a></li>
-            <li><a href="#">Motability</a></li>
-            <li><a href="#">Aftercare</a></li>
-            <li><a href="#">Contact Us</a></li>
+        <nav class="header__nav-bottom">
+          <ul class="flex flex--space-around">
+            <li class="nav-bottom__list__item">
+              <a href="#" class="text--shadow">New Vehicles</a>
+            </li>
+            <li class="nav-bottom__list__item">
+              <a href="#" class="text--shadow">Nearly New/Used Vehicles</a>
+            </li>
+            <li class="nav-bottom__list__item">
+              <a href="#" class="text--shadow">Motability</a>
+            </li>
+            <li class="nav-bottom__list__item">
+              <a href="#" class="text--shadow">Aftercare</a>
+            </li>
+            <li class="nav-bottom__list__item">
+              <a href="#" class="text--shadow">Contact Us</a>
+            </li>
           </ul>
         </nav>
         <!-- Header navigation bottom end -->

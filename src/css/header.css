@@ -1,0 +1,68 @@
+/**
+ * Header Styles
+ */
+.header {
+  background-color: #fdfdfd;
+}
+
+/* Header logo container */
+.header__logo-container {
+  width: 220px;
+  padding: 0 1.6em;
+  border-right: 0.1em solid #eee;
+}
+
+/* Header navigation wrapper container */
+.header__nav-wrapper {
+  flex-grow: 1;
+}
+
+/* Header top navigation container */
+.header__nav-top {
+  width: 100%;
+  border-bottom: 0.1em solid #eee;
+}
+
+.nav-top__list__item {
+  display: inline-block;
+  font-size: 0.9em;
+}
+
+.nav-top__list__item + .nav-top__list__item {
+  margin-left: 2.3em;
+}
+
+/* Contrast button style */
+.nav-top__item__contrast.is-active {
+  color: yellow;
+  background-color: #000;
+  border-color: #000;
+}
+
+.nav-top__item__contrast.is-active:hover, .nav-top__item__contrast.is-active:focus {
+  border-color: yellow;
+}
+
+/* Call us button styles */
+.nav-top__item__contact {
+  padding: 0.4em 0.8em;
+}
+
+.contact__phone {
+  transform: rotateZ(90deg); /* Rotate the phone */
+  margin-right: 0.4em;
+}
+
+.contact__info {
+  margin-left: 0.4em;
+}
+
+/* Header bottom navigation container */
+.header__nav-bottom {
+  font-weight: 600;
+}
+
+.nav-bottom__list__item {
+  padding: 1em;
+  position: relative; /* For dropdown menus */
+}

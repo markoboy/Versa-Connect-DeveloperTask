@@ -11,6 +11,7 @@ body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
   color: #000;
+  background-color: #eee;
   overflow-x: hidden; /* Hide horizontal overflow. */
 }
 
@@ -29,4 +30,104 @@ ul {
 img {
   width: 100%;
   height: auto;
+}
+
+/* Reset buttons styles */
+button {
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/**
+ * General class styles
+ */
+.flex {
+  display: flex;
+}
+
+.flex--column {
+  flex-direction: column;
+}
+
+.flex--wrap {
+  flex-wrap: wrap;
+}
+
+.flex--bottom-align {
+  align-items: flex-end;
+}
+
+.flex--center-align {
+  align-items: center;
+}
+
+.flex--space-around {
+  justify-content: space-around;
+}
+
+.text--right {
+  text-align: right !important;
+}
+
+.text--shadow {
+  transition: text-shadow 0.25s ease-in;
+}
+
+.text--shadow:hover, .text--shadow:focus {
+  text-shadow: 2px 2px 4px #aaa;
+}
+
+/* Button styles that can be applied to anchor links too */
+.btn {
+  display: inline-block;
+  text-align: center;
+
+  border: solid 0.05em transparent; /* Set border to transparent to animate on hover */
+  border-radius: 3px;
+  outline: none;
+
+  padding: 0em 0.2em;
+  color: #fff;
+  background-color: #016cbd;
+
+  transition: color 0.25s ease-in,
+    background-color 0.25s ease-in,
+    border-color 0.25s ease-in;
+}
+
+.btn:active {
+  transform: translateY( 1px );
+  filter: saturate( 150% );
+}
+
+.btn:hover, .btn:focus {
+  color: #016cbd;
+  border-color: #016cbd;
+  background-color: #fff;
+}
+
+.btn--green {
+  background-color: #14a65b;
+}
+
+.btn--green:hover, .btn--green:focus {
+  color: #14a65b;
+  border-color: #14a65b;
+  background-color: #fff;
+}
+
+.btn--white {
+  font-weight: 600;
+  color: #01487f;
+  background-color: #fff;
+  border-color: #999;
+}
+
+.btn--white:hover, .btn--white:focus {
+  color: #fff;
+  background-color: #01487f;
 }
