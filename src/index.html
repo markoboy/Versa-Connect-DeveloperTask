@@ -291,30 +291,42 @@
       <!-- Vehicle layouts details end -->
 
       <!-- Vehicle color container start -->
-      <article>
+      <article class="text--center vehicle-details__color">
         <!-- Vehicle image container start -->
-        <div></div>
+        <div class="color__image-container">
+          <img src="./images/vehicle_image_red.png" alt="Vehicle red image">
+        </div>
         <!-- Vehicle image container end -->
 
         <!-- Vehicle color picker start -->
-        <div>
+        <div class="flex flex--justify-center color__color-picker">
           <!-- Vehicle non metallic color start -->
-          <div>
+          <div class="color-picker__non-metallic is-active">
             <ul>
-              <li><button>Ligth Grey</button></li>
+              <li class="color-picker__list__item">
+                <button class="btn color-picker__btn is-active"></button>
+              </li>
+              <li class="color-picker__list__item">
+                <button class="btn color-picker__btn is-active"></button>
+              </li>
+              <li class="color-picker__list__item">
+                <button class="btn color-picker__btn is-active"></button>
+              </li>
             </ul>
-            <p>
+            <p class="color-picker__description">
               Non metallic
             </p>
           </div>
           <!-- Vehicle non metallic color end -->
 
           <!-- Vehicle metallic color start -->
-          <div>
+          <div class="color-picker__metallic">
             <ul>
-              <li><button>Ligth Grey</button></li>
+              <li class="color-picker__list__item">
+                <button class="btn color-picker__btn"></button>
+              </li>
             </ul>
-            <p>
+            <p class="color-picker__description">
               Metallic
             </p>
           </div>

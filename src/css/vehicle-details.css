@@ -86,3 +86,83 @@
   width: auto;
   max-width: 100%;
 }
+
+/* Vehicle details color container styles */
+.color__image-container {
+  max-width: 920px;
+  margin: 0 auto; /* Center the container */
+}
+
+.color-picker__non-metallic, .color-picker__metallic {
+  font-weight: 600;
+  font-size: 0.9em;
+  margin: 0 0.6em;
+  position: relative;
+}
+
+/* Set description color to lightgrey if it is not active */
+.color-picker__non-metallic:not(.is-active), .color-picker__metallic:not(.is-active) {
+  color: #aaa;
+}
+
+/* Create a bottom border, add transition to make nice animation when changing color */
+.color-picker__non-metallic::after, .color-picker__metallic::after {
+  content: '';
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-bottom: 1px solid #000;
+  transform: scaleX(0);
+  transition: transform 0.25s ease-in;
+}
+
+.color-picker__non-metallic.is-active::after, .color-picker__metallic.is-active::after {
+  transform: scaleX(1);
+}
+
+.color-picker__btn {
+  font-family: "Font Awesome 5 Free"; /* In order to use unicode codes */
+  padding: 1.6em;
+  border-radius: 100%;
+  border-color: #fff; /* Color to be changed with JS */
+  background-color: grey;
+  box-shadow: 0 1px 10px -2px #999, inset 0 0 0 2px white;
+  position: relative;
+}
+
+.color-picker__btn:hover, .color-picker__btn:focus {
+  border-color: #fff;
+  color: #fff;
+  background-color: grey;
+  box-shadow: 0 1px 10px 1px #999, inset 0 0 0 7px white;
+  transition: all 0.25s ease-in;
+}
+
+/* Add a tick symbol in the button that is active */
+.color-picker__btn::after {
+  font-size: 0;
+  position: absolute;
+  content: "\f00c";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: font-size 0.25s ease-in;
+}
+
+.color-picker__btn.is-active::after {
+  font-size: 1.6em;
+}
+
+.color-picker__list__item {
+  display: inline-block;
+}
+
+.color-picker__list__item + .color-picker__list__item {
+  margin-left: 1.2em; /* 0.6em + 0.6em */
+}
+
+.color-picker__description {
+  margin: 0;
+  padding: 1em 0;
+}

@@ -70,6 +70,10 @@ button {
   justify-content: space-around;
 }
 
+.flex--justify-center {
+  justify-content: center;
+}
+
 /* Text styles */
 .text--left {
   text-align: left !important;
