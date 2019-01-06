@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="./css/vehicle-description.css">
     <link rel="stylesheet" href="./css/keep-you-going.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/interested-modal.css">
     <!-- endbuild -->
 
   </head>
@@ -506,16 +507,25 @@
     <!-- Footer end -->
 
     <!-- Interested in this vehicle container start -->
-    <aside>
-      <h3>Interested in this vehicle?</h3>
-      <p>
+    <aside class="card-container interested-modal modal is-closed">
+      <h3 class="interested-modal__heading">Interested in this vehicle?</h3>
+      <p class="card-container__paragraph">
         Are you interested in the <span>Ford Tourneo</span>? Simply fill in the form bellow and we'll be in touch.
       </p>
-      <form action="#">
-        <input type="text" name="name" placeholder="Name">
-        <input type="tel" name="telephone" placeholder="Number">
-        <input type="submit" value="Go">
+      <form class="flex" action="#">
+        <input class="interested-modal__form__input" type="text" name="name" placeholder="Name" required>
+        <input class="interested-modal__form__input" type="tel" name="telephone" placeholder="Number" required>
+        <button class="btn interested-modal__form__input interested-modal__form__input--btn" type="submit">
+          Go
+        </button>
       </form>
+      <!-- Modal closing button container start -->
+      <div class="modal__close-btn-container">
+        <button id="modal__close-btn" class="modal__close-btn">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <!-- Modal closing button container end -->
     </aside>
     <!-- Interested in this vehicle container end -->
 

@@ -1,0 +1,77 @@
+/**
+ * Interested in this vehicle modal container styles
+ */
+.interested-modal {
+  max-width: 400px;
+  padding: 1.1em;
+  background: #fff;
+}
+
+.interested-modal__heading {
+  font-size: 1.7em;
+  margin: 0;
+}
+
+.interested-modal__form__input {
+  padding: 0.5em;
+  margin: 0;
+  border: none;
+  border-radius: 4px;
+}
+
+.interested-modal__form__input::placeholder {
+  color: #333;
+}
+
+.interested-modal__form__input + .interested-modal__form__input {
+  margin-left: 0.6em;
+}
+
+.interested-modal__form__input[type="text"],
+.interested-modal__form__input[type="tel"] {
+  background-color: rgb(234, 234, 234);
+}
+
+.interested-modal__form__input--btn {
+  padding: 0.5em 0.7em;
+  background-color: rgb(0, 62, 120);
+  border: 1px solid rgb(0, 62, 120);
+}
+
+.interested-modal__form__input--btn:hover, .interested-modal__form__input--btn:focus {
+  color: rgb(0, 62, 120);
+  border: 1px solid rgb(0, 62, 120);
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  bottom: 0;
+  right: 3em;
+
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.25s ease-in, opacity 0.25s ease-in;
+}
+
+.modal.is-closed {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modal__close-btn-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  padding: 0.5em 1em;
+
+  color: darkred;
+  font-size: 1.2em;
+}
+
+.modal__close-btn:hover, .modal__close-btn:focus {
+  color: red;
+  text-shadow: 0 1px 10px darkgray;
+  transition: all 0.25s ease-in;
+}
