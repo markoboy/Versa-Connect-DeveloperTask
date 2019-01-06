@@ -1,10 +1,6 @@
 /**
  * Header Styles
  */
-.header {
-  background-color: #fdfdfd;
-}
-
 /* Header logo container */
 .header__logo-container {
   width: 220px;
