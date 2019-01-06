@@ -186,78 +186,24 @@
         <nav class="vehicle-details__nav">
           <ul class="text--center flex">
             <li class="vehicle-details__nav__item">
-              <button class="btn btn--white vehicle-details__nav__btn is-active">Dimensions</button>
+              <button data-detail="dimensions" class="btn btn--white vehicle-details__nav__btn is-active">Dimensions</button>
             </li>
             <li class="vehicle-details__nav__item">
-              <button class="btn btn--white vehicle-details__nav__btn">Vehicle Layouts</button>
+              <button data-detail="layouts" class="btn btn--white vehicle-details__nav__btn">Vehicle Layouts</button>
             </li>
             <li class="vehicle-details__nav__item">
-              <button class="btn btn--white vehicle-details__nav__btn">Colour</button>
+              <button data-detail="color" class="btn btn--white vehicle-details__nav__btn">Colour</button>
             </li>
             <li class="vehicle-details__nav__item">
-              <button class="btn btn--white vehicle-details__nav__btn">Interior Trim</button>
+              <button data-detail="interior" class="btn btn--white vehicle-details__nav__btn">Interior Trim</button>
             </li>
           </ul>
         </nav>
         <!-- Vehicle details navigation end -->
 
-        <!-- TODO: Change dynamically all 4 vehicles details with JavaScript -->
-        <!-- Vehicle details dimensions start -->
-        <article class="flex vehicle-details__dimensions">
-
-          <!-- Dimensions table start -->
-          <table class="text--left dimensions__table">
-            <thead>
-              <tr>
-                <td></td>
-                <th>Short</th>
-                <th>Long</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- TODO: Add the table with JavaScript -->
-              <tr>
-                <th class="dimensions__table__heading">Entry height</th>
-                <td class="dimensions__table__short">1,373mm</td>
-                <td class="dimensions__table__long">1,373mm</td>
-              </tr>
-              <tr>
-                <th class="dimensions__table__heading">Ramp lenght</th>
-                <td class="dimensions__table__short">1,010mm</td>
-                <td class="dimensions__table__long">1,010mm</td>
-              </tr>
-              <tr>
-                <th class="dimensions__table__heading">Entry height</th>
-                <td class="dimensions__table__short">1,373mm</td>
-                <td class="dimensions__table__long">1,373mm</td>
-              </tr>
-              <tr>
-                <th class="dimensions__table__heading">Ramp lenght</th>
-                <td class="dimensions__table__short">1,010mm</td>
-                <td class="dimensions__table__long">1,010mm</td>
-              </tr>
-              <tr>
-                <th class="dimensions__table__heading">Entry height</th>
-                <td class="dimensions__table__short">1,373mm</td>
-                <td class="dimensions__table__long">1,373mm</td>
-              </tr>
-              <tr>
-                <th class="dimensions__table__heading">Ramp lenght</th>
-                <td class="dimensions__table__short">1,010mm</td>
-                <td class="dimensions__table__long">1,010mm</td>
-              </tr>
-            </tbody>
-          </table>
-          <!-- Dimensions table end -->
-
-          <!-- Dimensions image start -->
-          <div class="flex flex--center-align dimensions__image-container">
-            <img src="./images/vehicle_dimension.jpg" alt="Vehicle dimensions">
-          </div>
-          <!-- Dimensions image end -->
-
-        </article>
-        <!-- Vehicle details dimensions end -->
+        <!-- Vehicle details container start -->
+        <div id="vehicle-details-container"></div>
+        <!-- Vehicle details container end -->
 
         <!-- Vehicle layouts details start -->
         <article class="vehicle-details__layout">
