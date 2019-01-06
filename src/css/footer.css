@@ -1,0 +1,44 @@
+/**
+ * Footer styles
+ */
+.footer {
+  background-color: rgb(67, 72, 77);
+  color: #fff;
+  padding: 2em 9em;
+}
+
+.footer__phrase {
+  align-self: flex-end;
+  color: rgb(157, 165, 173);
+  font-size: 0.9em;
+  max-width: 450px;
+}
+
+.footer__phrase p {
+  margin: 0;
+}
+
+.footer__nav {
+  font-size: 1.1em;
+  margin-top: 2em;
+}
+
+.footer__nav__list {
+  line-height: 2;
+}
+
+.footer__nav__list + .footer__nav__list {
+  margin-left: 5.5em;
+}
+
+.footer__address {
+  font-size: 0.85em;
+  line-height: 1;
+  color: rgb(98, 104, 110);
+  margin-top: 4em;
+}
+
+.footer__link:hover, .footer__link:focus {
+  color: #fff;
+  text-shadow: 0 1px 8px darkgray;
+}

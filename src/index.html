@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="./css/vehicle-gallery.css">
     <link rel="stylesheet" href="./css/vehicle-description.css">
     <link rel="stylesheet" href="./css/keep-you-going.css">
+    <link rel="stylesheet" href="./css/footer.css">
     <!-- endbuild -->
 
   </head>
@@ -456,13 +457,13 @@
     <!-- Keeping you going container end -->
 
     <!-- Footer start -->
-    <footer>
+    <footer class="footer">
 
       <!-- Footer wrapper start -->
-      <div>
+      <div class="flex flex--space-between">
 
         <!-- Footer company phrase start -->
-        <div>
+        <div class="footer__phrase">
           <p>
             If you're looking for a new or used Wheelchair Accessible Vehicle (WAV), then Bristol Street Versa is the best place to start.
           </p>
@@ -470,16 +471,22 @@
         <!-- Footer company phrase end -->
 
         <!-- Footer navigation start -->
-        <nav>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">New Vehicles</a></li>
-            <li><a href="#">Motability</a></li>
-            <li><a href="#">Nearly New & Used</a></li>
-            <li><a href="#">Aftercare</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Terms</a></li>
-            <li><a href="#">Blog</a></li>
+        <nav class="flex footer__nav">
+          <!-- After searching for flex column wrap this can only be done with seperate containers  -->
+          <!-- https://stackoverflow.com/questions/33891709/when-flexbox-items-wrap-in-column-mode-container-does-not-grow-its-width -->
+          <ul class="footer__nav__list">
+            <li class="footer__nav__item"><a class="footer__link" href="#">Home</a></li>
+            <li class="footer__nav__item"><a class="footer__link" href="#">New Vehicles</a></li>
+            <li class="footer__nav__item"><a class="footer__link" href="#">Motability</a></li>
+          </ul>
+          <ul class="footer__nav__list">
+            <li class="footer__nav__item"><a class="footer__link" href="#">Nearly New & Used</a></li>
+            <li class="footer__nav__item"><a class="footer__link" href="#">Aftercare</a></li>
+            <li class="footer__nav__item"><a class="footer__link" href="#">Contact Us</a></li>
+          </ul>
+          <ul class="footer__nav__list">
+              <li class="footer__nav__item"><a class="footer__link" href="#">Terms</a></li>
+              <li class="footer__nav__item"><a class="footer__link" href="#">Blog</a></li>
           </ul>
         </nav>
         <!-- Footer navigation end -->
@@ -488,9 +495,9 @@
       <!-- Footer wrapper end -->
 
       <!-- Footer address start -->
-      <div>
+      <div class="footer__address">
         <p>
-          Registered office for all group companies: Vertu Motors plc, <a href="#">Show Accessibility Options</a> | Vertu House, Fifth Avenue Business Park, Team Valley, Gateshead, Tyne and Wear, NE11 0XA, <a href="#">Show Accessibility Options</a>
+          Registered office for all group companies: Vertu Motors plc, <a class="footer__link" href="#">Show Accessibility Options</a> | Vertu House, Fifth Avenue Business Park, Team Valley, Gateshead, Tyne and Wear, NE11 0XA, <a class="footer__link" href="#">Show Accessibility Options</a>
         </p>
       </div>
       <!-- Footer address end -->
