@@ -186,7 +186,23 @@ class View {
   }
 
   static renderLayoutsDetails( { layouts } ) {
-    return layouts;
+    return (
+      `<article class="vehicle-details__layout">
+        <div class="vehicle-details__layout__short">
+          <p class="layout__paragraph">Short (based on ${layouts.short.model})</p>
+          <div>
+            <img class="layout__image" src="${this.url.images}${layouts.short.image}" alt="${layouts.short.model} vehicle layout">
+          </div>
+        </div>
+        <div class="vehicle-details__layout__long">
+          <p class="layout__paragraph">Long (based on ${layouts.long.model})</p>
+          <div>
+            <img class="layout__image" src="${this.url.images}${layouts.long.image}" alt="${layouts.long.model} vehicle layout">
+          </div>
+          <p class="layout__paragraph">${layouts.long.desc}</p>
+        </div>
+      </article>`
+    );
   }
 
   static renderColorDetails( { colors } ) {
