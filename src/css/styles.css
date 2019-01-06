@@ -8,11 +8,14 @@ html, body {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   line-height: 1.5;
   color: #000;
   background-color: #eee;
-  overflow-x: hidden; /* Hide horizontal overflow. */
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -45,6 +48,13 @@ button {
 /**
  * General class styles
  */
+.page-wrapper {
+  max-width: 1450px;
+  margin: 0 auto;
+  background-color: #fff;
+  overflow-x: hidden; /* Hide horizontal overflow. */
+}
+
 /* Flexbox styles */
 .flex {
   display: flex;
