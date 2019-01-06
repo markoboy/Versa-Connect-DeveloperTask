@@ -40,7 +40,7 @@ class Controller {
     // Set the currentVehicle the first item of the array.
     this.currentVehicle = this.vehicles[0];
 
-    // view.init();
+    View.init();
   }
 
   // Return all the vehicles fetched from the server.
