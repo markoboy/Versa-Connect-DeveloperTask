@@ -6,7 +6,7 @@
  */
 
 // The server's API. TODO: Change with github repo page url.
-const url = '';
+const url = 'http://localhost:3000';
 
 /**
  * Get the vehicle data from the json file.
@@ -15,7 +15,7 @@ const url = '';
  * @returns {promise} The API response.
  */
 const getData = () => {
-  return fetch(`${url}./data/vehicles.json`)
+  return fetch(`${url}/data/vehicles.json`)
     .then( res => {
       // Check if the response was successful.
       if (!res.ok) {
@@ -41,6 +41,13 @@ class Controller {
     this.currentVehicle = this.vehicles[0];
 
     View.init();
+  }
+
+  static getUrl() {
+    return {
+      main: url,
+      images: url + '/images/'
+    };
   }
 
   // Return all the vehicles fetched from the server.

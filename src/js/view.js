@@ -15,11 +15,21 @@ class View {
 
     this.currentVehicle = Controller.getCurrentVehicle();
 
+    this.url = Controller.getUrl();
+
     this.render();
   }
 
   static render() {
-    this.renderModelNav( this.currentVehicle );
+    // Check if there is a change with the currentVehicle in order to render the changes.
+    if (this.oldVehicle !== this.currentVehicle) {
+
+      this.renderModelNav( this.currentVehicle );
+
+      this.renderMainBillboard( this.currentVehicle );
+
+      this.oldVehicle = this.currentVehicle;
+    }
   }
 
   /**
@@ -47,6 +57,21 @@ class View {
 
     // Display the list to the DOM.
     modelListbox.innerHTML = modelList;
+  }
+
+  static renderMainBillboard( vehicle ) {
+    // Select the main billboard container and set its background image.
+    let bbContainer = document.querySelector('#main-billboard');
+    bbContainer.style.backgroundImage = `url(${this.url.images}${vehicle.billboardImage})`;
+
+    // Set the heading and the description of the billboard.
+    let heading = document.querySelector('#main-billboard .card-container__heading');
+    heading.innerHTML = vehicle.name;
+
+    let description = document.querySelector('#main-billboard .card-container__paragraph');
+    description.innerHTML = vehicle.billboardDesc;
+
+    // TODO: Set the corrent link to the enquiry.
   }
 
 }
