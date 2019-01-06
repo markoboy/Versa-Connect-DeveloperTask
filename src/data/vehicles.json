@@ -1,0 +1,113 @@
+[
+  {
+    "id": "versa-connect",
+    "name": "Versa Connect",
+    "billboardImage": "main_billboard.jpg",
+    "billboardDesc": "“The Ford Tourneo Connect is a relaxing and comfortable place to be. Great to drive, great to sit in, it boasts premium finishes, high quality materials and fuel efficiency without compromising everyday practically.”",
+    "dimensions": {
+      "image": "vehicle_dimension.jpg",
+      "short": {
+        "entry_height": "1,373mm",
+        "ramp_length": "1,010mm",
+        "ramp_width": "755mm",
+        "channel_length": "1,580mm",
+        "external_height": "1,852mm",
+        "external_length": "4,418mm"
+      },
+      "long": {
+        "entry_height": "1,373mm",
+        "ramp_length": "1,010mm",
+        "ramp_width": "755mm",
+        "channel_length": "1,580mm",
+        "external_height": "1,845mm",
+        "external_length": "4,818mm"
+      }
+    },
+    "layouts": {
+      "short": {
+        "model": "Ford Tourneo Connect",
+        "image": "vehicle_layout_short.jpg"
+      },
+      "long": {
+        "model": "Ford Tourneo Grand Connect",
+        "image": "vehicle_layout_long.jpg",
+        "desc": "* Wheelchair user can sit a little further forward (not as forward as Row 2 seats)"
+      }
+    },
+    "colors": {
+      "nonMetallic": [
+        {
+          "value": "#c82121",
+          "image": "vehicle_image_red.png"
+        },
+        {
+          "value": "#757779",
+          "image": "vehicle_image_silver.png"
+        },
+        {
+          "value": "#8a7f41",
+          "image": "vehicle_image_solar.png"
+        }
+      ],
+      "metallic": [
+        {
+          "value": "#151616",
+          "image": "vehicle_image_black.png"
+        },
+        {
+          "value": "#141629",
+          "image": "vehicle_image_blazerBlue.png"
+        },
+        {
+          "value": "#1c2760",
+          "image": "vehicle_image_deepImpactBlue.png"
+        },
+        {
+          "value": "#292b29",
+          "image": "vehicle_image_guard.png"
+        },
+        {
+          "value": "#444340",
+          "image": "vehicle_image_magnetic.png"
+        },
+        {
+          "value": "#75766b",
+          "image": "vehicle_image_metalicious.png"
+        }
+      ]
+    },
+    "interior": {
+      "image": "vehicle_interior.jpg",
+      "trim": [
+        {
+          "material": "Titanium",
+          "insert": "Chicane in Medium Stone",
+          "bolster": "Malt in Medium Stone",
+          "image": "vehicle_interior_titanium.jpg"
+        },
+        {
+          "material": "Zetec",
+          "insert": "Route in Charcoal Black",
+          "bolster": "Max in Charcoal Black",
+          "image": "vehicle_interior_zetec.jpg"
+        },
+        {
+          "material": "Titanium",
+          "insert": "Chicane in Charcoal Black",
+          "bolster": "Malt in Charcoal Black",
+          "image": "vehicle_interior_titanium2.jpg"
+        }
+      ]
+    },
+    "gallery": [
+      "vehicle_interior.jpg",
+      "vehicle_interior2.jpg",
+      "vehicle_interior3.jpg"
+    ],
+    "description": [
+      "The Versa Connect takes these attributes and focuses on extending them seamlessly into the wheelchair accessible aspects of our vehicle. It is our aim to produce a conversion that is both practical and stylish, with an attention to detail that provides the same high quality look and feel throughout the vehicle.",
+      "The Versa Connect is available in two wheelbases. The Short Versa Connect can accommodate the wheelchair user and up to 3 seated passengers (including the driver) or up to 5 seated passengers without the wheelchair. The Long Versa Connect can accommodate the wheelchair user and up to 5 seated passengers (including the driver) or up to 7 seated passengers without the wheelchair.",
+      "Twin sliding doors allow for ease of passenger access with a lightweight manual ramp to the rear for wheelcair access. As an optional extra, the ramp can have the added ability, using a simple lever, to fold- at into the vehicle so that when the wheelcair user is not travelling, a huge and easily accessible boot space is created making the Versa Connect even more practical."
+    ]
+  }
+]
