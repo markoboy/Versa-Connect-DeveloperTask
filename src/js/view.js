@@ -9,8 +9,6 @@
 class View {
 
   static init() {
-    console.log('Initializing the view!');
-
     this.vehicles = Controller.getVehicles();
 
     this.currentVehicle = Controller.getCurrentVehicle();

@@ -35,7 +35,6 @@ class Controller {
   // Initialize the page.
   static async init() {
     this.vehicles = await getData();
-    console.log('Initializing the controller.');
 
     // Set the currentVehicle the first item of the array.
     this.currentVehicle = this.vehicles[0];
