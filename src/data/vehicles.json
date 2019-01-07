@@ -37,40 +37,49 @@
     "colors": {
       "nonMetallic": [
         {
+          "name": "red",
           "value": "#c82121",
           "image": "vehicle_image_red.png"
         },
         {
+          "name": "silver",
           "value": "#757779",
           "image": "vehicle_image_silver.png"
         },
         {
+          "name": "solar",
           "value": "#8a7f41",
           "image": "vehicle_image_solar.png"
         }
       ],
       "metallic": [
         {
+          "name": "black",
           "value": "#151616",
           "image": "vehicle_image_black.png"
         },
         {
+          "name": "blazer blue",
           "value": "#141629",
           "image": "vehicle_image_blazerBlue.png"
         },
         {
+          "name": "deep impact blue",
           "value": "#1c2760",
           "image": "vehicle_image_deepImpactBlue.png"
         },
         {
+          "name": "guard",
           "value": "#292b29",
           "image": "vehicle_image_guard.png"
         },
         {
+          "name": "magnetic",
           "value": "#444340",
           "image": "vehicle_image_magnetic.png"
         },
         {
+          "name": "metalicious",
           "value": "#75766b",
           "image": "vehicle_image_metalicious.png"
         }

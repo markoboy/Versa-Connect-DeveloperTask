@@ -24,6 +24,8 @@ class View {
     // Initialize the event listeners to the buttons.
     this.initVehicleDetailsBtn( this.currentDetails );
 
+    this.currentColor = this.currentVehicle.colors.nonMetallic[0];
+
     this.render();
   }
 
@@ -35,6 +37,9 @@ class View {
 
       this.renderMainBillboard( this.currentVehicle );
 
+      // Init color buttons.
+      this.initColorButtons();
+
       this.oldVehicle = this.currentVehicle;
     }
 
@@ -43,6 +48,11 @@ class View {
         || this.oldDetails !== this.currentDetails) {
       this.renderVehicleDetails( this.currentDetails );
       this.oldDetails = this.currentDetails;
+    }
+
+    if (this.oldColor !== this.currentColor) {
+      this.renderVehicleDetails( this.currentDetails );
+      this.oldColor = this.currentColor;
     }
   }
 
@@ -118,6 +128,10 @@ class View {
 
     let vehicleDetailsContainer = document.querySelector('#vehicle-details-container');
 
+    if (this.currentDetails !== this.oldDetails) {
+      vehicleDetailsContainer.innerHTML = '';
+    }
+
     switch (detail) {
     case 'dimensions':
       vehicleDetailsContainer.innerHTML = this.renderDimensionsDetails( this.currentVehicle);
@@ -126,7 +140,10 @@ class View {
       vehicleDetailsContainer.innerHTML = this.renderLayoutsDetails( this.currentVehicle );
       break;
     case 'color':
-      vehicleDetailsContainer.innerHTML = this.renderColorDetails( this.currentVehicle );
+      // If the color details is just changing color let renderColorDetails to handle the rendering.
+      this.currentDetails !== this.oldDetails ?
+        vehicleDetailsContainer.appendChild(this.renderColorDetails( this.currentVehicle) ) :
+        this.renderColorDetails( this.currentVehicle );
       break;
     case 'interior':
       vehicleDetailsContainer.innerHTML = this.renderInteriorDetails( this.currentVehicle );
@@ -205,8 +222,175 @@ class View {
     );
   }
 
-  static renderColorDetails( { colors } ) {
-    return colors;
+  /**
+   * This function will initialize the nonMetallic and metallic
+   * list and their buttons in order to be appended to the vehicle
+   * details color page.
+   */
+  static initColorButtons() {
+    let { colors } = this.currentVehicle;
+
+    // Create the non-Metallic and metallic containers.
+    let nonMetallic = document.createElement('div');
+    nonMetallic.classList.add('color-picker__non-metallic');
+
+    let metallic = document.createElement('div');
+    metallic.classList.add('color-picker__metallic');
+
+    // Loop through the colors.
+    for (let material in colors) {
+      // Create the color list.
+      let colorList = document.createElement('ul');
+
+      colors[material].forEach( color => {
+        // Create the list item.
+        let li = document.createElement('li');
+        li.classList.add('color-picker__list__item');
+
+        // Create the color button.
+        let btn = document.createElement('button');
+        btn.classList.add('btn', 'color-picker__btn');
+        btn.style.backgroundColor = color.value;
+        // Add a title for assisteve technology.
+        btn.title = color.name;
+
+        btn.dataset.material = material;
+        btn.dataset.color = color.value;
+
+        // Set the current active button for color value.
+        if (color === this.currentColor) {
+          btn.classList.add('is-active');
+
+          // Set the containers to active.
+          if (material === 'nonMetallic')
+            nonMetallic.classList.add('is-active');
+          else if (material === 'metallic')
+            metallic.classList.add('is-active');
+        }
+
+        // Add the button to the list item and list item to the colorList.
+        li.appendChild(btn);
+        colorList.appendChild(li);
+      });
+
+      // Check where to add the list to.
+      if (material === 'nonMetallic') {
+        nonMetallic.appendChild(colorList);
+        nonMetallic.innerHTML += `
+              <p class="color-picker__description">
+                Non metallic
+              </p>`;
+      } else if (material === 'metallic') {
+        metallic.appendChild(colorList);
+        metallic.innerHTML += `
+              <p class="color-picker__description">
+                Metallic
+              </p>`;
+      }
+    }
+
+    this.colorPickerLists = {
+      nonMetallic,
+      metallic
+    };
+  }
+
+  /**
+   * This function handles the is-active class of the color buttons
+   * and their containers. It is to be used from a loop with all buttons.
+   * @param {node} btn The node button element to check.
+   */
+  static handleActiveColorBtn( btn ) {
+    // Check whether the current button has the same color value as the current color.
+    if (btn.dataset.color === this.currentColor.value) {
+      // If so add the is-active class.
+      btn.classList.add('is-active');
+      // Check in which material category the button color is a child.
+      if (btn.dataset.material === 'metallic') {
+        // Add and remove the is-active class from the containers.
+        this.colorPickerLists.metallic.classList.add('is-active');
+        this.colorPickerLists.nonMetallic.classList.remove('is-active');
+      } else {
+        this.colorPickerLists.nonMetallic.classList.add('is-active');
+        this.colorPickerLists.metallic.classList.remove('is-active');
+      }
+    } else {
+      btn.classList.remove('is-active');
+    }
+  }
+
+  /**
+   * This function will render the color details page.
+   * In case that the colorDetailContainer is not present
+   * it returns a NODE object else it handles the image
+   * change functionality itself.
+   * @param {object} vehicle The current vehicle to be rendered.
+   */
+  static renderColorDetails( vehicle ) {
+    /* TODO: Handle image changes with a loader and Image() object */
+    let { colors } = vehicle;
+    // Get the colors detail container.
+    let colorDetailContainer = document.querySelector('.vehicle-details__color');
+
+    if (colorDetailContainer === null) {
+      // Create the colors details container.
+      colorDetailContainer = document.createElement('article');
+      colorDetailContainer.classList.add('text--center', 'vehicle-details__color');
+
+      // Append the image container and the color picker.
+      colorDetailContainer.innerHTML = `
+          <div class="color__image-container">
+            <img src="${this.url.images}${this.currentColor.image}" alt="${this.currentColor.name} ${vehicle.name}">
+          </div>
+          <div class="flex flex--justify-center color__color-picker">
+          </div>
+      `;
+
+      // Append the color buttons lists to the color picker container.
+      colorDetailContainer.querySelector('.color__color-picker').appendChild(this.colorPickerLists.nonMetallic);
+      colorDetailContainer.querySelector('.color__color-picker').appendChild(this.colorPickerLists.metallic);
+
+      // Store all the color buttons.
+      let buttons = colorDetailContainer.querySelectorAll('.color-picker__btn');
+
+      // Make an array out of the colors.
+      let colorsArray = [ ...colors.nonMetallic, ...colors.metallic];
+      buttons.forEach( btn => {
+        // Check which color is selected to add is-active class.
+        this.handleActiveColorBtn(btn);
+
+        // Add onclick listener.
+        btn.onclick = (e) => {
+          // Get the btn clicked.
+          let target = e.target;
+          // If the clicked button is active then return.
+          if (target.dataset.color === this.currentColor.value) return;
+
+          // Set the current color based on the color dataset.
+          this.currentColor = colorsArray.filter( color => color.value === target.dataset.color)[0];
+          // Render the screen.
+          this.render();
+        };
+      });
+
+      // Return the color detail container. NODE element
+      return colorDetailContainer;
+    } else {
+      // If the container already exist then just change their data.
+      // Select the image container and change the image.
+      colorDetailContainer.querySelector('.color__image-container').innerHTML = `
+        <img src="${this.url.images}${this.currentColor.image}" alt="${this.currentColor.name} ${this.currentVehicle.name}">
+      `;
+
+      // Select the buttons and handle the change.
+      let buttons = colorDetailContainer.querySelectorAll('.color-picker__btn');
+
+      // Check which button is active.
+      buttons.forEach( btn => {
+        this.handleActiveColorBtn(btn);
+      });
+    }
+
   }
 
   static renderInteriorDetails( { interior } ) {
