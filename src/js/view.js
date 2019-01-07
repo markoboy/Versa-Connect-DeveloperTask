@@ -139,28 +139,36 @@ class View {
 
     let vehicleDetailsContainer = document.querySelector('#vehicle-details-container');
 
-    if (this.currentDetails !== this.oldDetails) {
-      vehicleDetailsContainer.innerHTML = '';
-    }
+    /* Fake out a hidden loader in order for smoother replacement of details */
+    let hiddenLoader = document.createElement('div');
+    hiddenLoader.classList.add('is-hidden');
 
     switch (detail) {
     case 'dimensions':
-      vehicleDetailsContainer.innerHTML = this.renderDimensionsDetails( this.currentVehicle);
+      hiddenLoader.innerHTML = this.renderDimensionsDetails( this.currentVehicle);
       break;
     case 'layouts':
-      vehicleDetailsContainer.innerHTML = this.renderLayoutsDetails( this.currentVehicle );
+      hiddenLoader.innerHTML = this.renderLayoutsDetails( this.currentVehicle );
       break;
     case 'color':
       // If the color details is just changing color let renderColorDetails to handle the rendering.
       this.currentDetails !== this.oldDetails ?
-        vehicleDetailsContainer.appendChild(this.renderColorDetails( this.currentVehicle) ) :
+        hiddenLoader.appendChild(this.renderColorDetails( this.currentVehicle) ) :
         this.renderColorDetails( this.currentVehicle );
       break;
     case 'interior':
-      vehicleDetailsContainer.innerHTML = this.renderInteriorDetails( this.currentVehicle );
+      hiddenLoader.innerHTML = this.renderInteriorDetails( this.currentVehicle );
       break;
     default:
       console.error(`${detail} is a wrong argument for vehicle details!`);
+    }
+
+    /* If the details page has changed then set a small amount of timeout to change the details page. */
+    if (this.currentDetails !== this.oldDetails) {
+      setTimeout(() => {
+        vehicleDetailsContainer.innerHTML = '';
+        vehicleDetailsContainer.appendChild(hiddenLoader.firstElementChild);
+      }, 60);
     }
   }
 
