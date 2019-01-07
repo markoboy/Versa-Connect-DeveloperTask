@@ -43,6 +43,8 @@ class View {
 
       this.renderVehicleDescription( this.currentVehicle );
 
+      this.handleOffersBtn( this.currentVehicle );
+
       // Handle interested modal appearance.
       this.handleInterestedModal( this.currentVehicle );
 
@@ -506,6 +508,14 @@ class View {
 
     // Render the paragraphs in the container.
     container.querySelector('div').innerHTML = paragraphs;
+  }
+
+  static handleOffersBtn( vehicle ) {
+    // Select all the offers button.
+    let buttons = document.querySelectorAll('.btn--offers');
+    // Change its content with the vehicle name.
+    buttons.forEach( btn => btn.innerHTML = `View our ${vehicle.name} offers` );
+    // TODO: Add the corresponding link to them.
   }
 
   static handleInterestedModal( vehicle ) {
