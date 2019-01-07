@@ -41,6 +41,9 @@ class View {
       let galleryItterator = 0;
       this.handleVehicleGallery( this.currentVehicle, galleryItterator );
 
+      // Handle interested modal appearance.
+      this.handleInterestedModal( this.currentVehicle );
+
       // Init color buttons.
       this.initColorButtons();
 
@@ -489,6 +492,33 @@ class View {
       i === 0 ? i = gallery.length - 1 : i -= 1;
       clearTimeout(this.galleryTimer);
       this.handleVehicleGallery(vehicle, i);
+    };
+  }
+
+  static handleInterestedModal( vehicle ) {
+    // Select the modal and change its paragraph to display the current vehicle.
+    let modal = document.querySelector('.interested-modal');
+    modal.querySelector('.card-container__paragraph').innerHTML = `
+      Are you interested in the ${vehicle.name}? Simply fill in the form bellow and we'll be in touch.
+    `;
+
+    // Add a click event on close btn and submit btn to close the modal.
+    modal.querySelector('#modal__close-btn').onclick = () => modal.classList.add('is-closed');
+
+    modal.querySelector('.interested-modal__form__input--btn').onclick = () => {
+      /* TODO: It should be added on a submit listener */
+      /* It should have validators. */
+      modal.classList.add('is-closed');
+    };
+
+    // Add onscroll event to display the modal when it reaches vehicle-description.
+    document.onscroll = () => {
+      let vehicleDesc = document.querySelector('.vehicle-description');
+      if (vehicleDesc.offsetTop <= window.pageYOffset) {
+        modal.classList.remove('is-closed');
+        // Nullify the document onscroll event so that the modal doesnt appear again.
+        document.onscroll = null;
+      }
     };
   }
 
