@@ -393,8 +393,60 @@ class View {
 
   }
 
+  static generateInteriorList( interior ) {
+    // Create the list container.
+    let listContainer = document.createElement('ul');
+    listContainer.classList.add('flex', 'flex--space-between');
+
+    let activeTrim = interior.trim[2];
+
+    // Loop through each interior trim to create the list items.
+    let listItem = interior.trim.map( trim => (
+      `
+      <li class="interior-trim__list__item">
+        <div class="interior-trim__checkbox__container" role="checkbox" aria-checked="${trim === activeTrim}" tabindex="0" aria-label="${trim.material} interior trim. Insert: ${trim.insert}. Bolster: ${trim.bolster}">
+          <div>
+            <img src="${this.url.images}${trim.image}" alt="${trim.material} interior trim">
+          </div>
+          <div class="flex flex--space-between">
+            <div>
+              <h4 class="interior-trim__description__heading">${trim.material}</h4>
+              <p class="interior-trim__description__paragraph">
+                Insert: ${trim.insert}
+              </p>
+              <p class="interior-trim__description__paragraph">
+                Bolster: ${trim.bolster}
+              </p>
+            </div>
+            <div class="interior-trim__checkbox">
+              <button class="btn interior-trim__checkbox__btn" tabindex="-1">
+                <i class="fas fa-check"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+      `
+    )).join('');
+
+    listContainer.insertAdjacentHTML('afterbegin', listItem);
+
+    return listContainer.outerHTML;
+  }
+
   static renderInteriorDetails( { interior } ) {
-    return interior;
+    return (
+      `
+        <article class="flex flex--column vehicle-details__interior-trim">
+          <div class="interior-trim__top-image" style="${this.url.images}${interior.image}"></div>
+          <div role="group" aria-label="Interior trim">
+            ${this.generateInteriorList(interior)}
+          </div>
+          <!-- Interior trim material checkboxes end -->
+        </article>
+        <!-- Vehicle interior trim container end -->
+      `
+    );
   }
 
 }
