@@ -61,6 +61,7 @@
 /* Header bottom navigation container */
 .header__nav-bottom {
   font-weight: 600;
+  padding-bottom: 0.5em;
 }
 
 .nav-bottom__list__item {
