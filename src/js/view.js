@@ -41,6 +41,8 @@ class View {
       let galleryItterator = 0;
       this.handleVehicleGallery( this.currentVehicle, galleryItterator );
 
+      this.renderVehicleDescription( this.currentVehicle );
+
       // Handle interested modal appearance.
       this.handleInterestedModal( this.currentVehicle );
 
@@ -493,6 +495,17 @@ class View {
       clearTimeout(this.galleryTimer);
       this.handleVehicleGallery(vehicle, i);
     };
+  }
+
+  static renderVehicleDescription( vehicle ) {
+    // Get the container.
+    let container = document.querySelector('.vehicle-description');
+
+    // Generate the paragraphs.
+    let paragraphs = vehicle.description.map( par => `<p>${par}</p>`).join('');
+
+    // Render the paragraphs in the container.
+    container.querySelector('div').innerHTML = paragraphs;
   }
 
   static handleInterestedModal( vehicle ) {
