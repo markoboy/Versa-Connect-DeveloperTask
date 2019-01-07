@@ -20,7 +20,7 @@
 }
 
 .interested-modal__form__input::placeholder {
-  color: #333;
+  color: #080808;
 }
 
 .interested-modal__form__input + .interested-modal__form__input {
@@ -29,18 +29,18 @@
 
 .interested-modal__form__input[type="text"],
 .interested-modal__form__input[type="tel"] {
-  background-color: rgb(234, 234, 234);
+  background-color: #eaeaea;
 }
 
 .interested-modal__form__input--btn {
   padding: 0.5em 0.7em;
-  background-color: rgb(0, 62, 120);
-  border: 1px solid rgb(0, 62, 120);
+  background-color: #003e78;
+  border: 1px solid #003e78;
 }
 
 .interested-modal__form__input--btn:hover, .interested-modal__form__input--btn:focus {
-  color: rgb(0, 62, 120);
-  border: 1px solid rgb(0, 62, 120);
+  color: #003e78;
+  border: 1px solid #003e78;
 }
 
 /* Modal styles */

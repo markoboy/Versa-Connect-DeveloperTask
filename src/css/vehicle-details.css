@@ -21,12 +21,13 @@
   padding: 0.5em 0;
   width: 100%;
   border-radius: 0;
+  border-color: #99b2c9;
 }
 
-.vehicle-details__nav__btn.is-active {
+.vehicle-details__nav__btn.is-active, .vehicle-details__nav__btn:hover, .vehicle-details__nav__btn:focus {
   color: #fff;
-  background-color: #013a65;
-  border-color: #013a65;
+  background-color: #003e78;
+  border-color: #003e78;
 }
 
 /* Add radius to side buttons */
@@ -39,10 +40,6 @@
 }
 
 /* Vehicle details dimensions container styles */
-.vehicle-details__dimensions {
-  margin-bottom: 2em;
-}
-
 .dimensions__image-container {
   padding-top: 1em;
 }
@@ -63,12 +60,13 @@
 }
 
 .dimensions__table__heading, .dimensions__table__short, .dimensions__table__long {
-  border: 1px solid #999;
+  border: 2px solid #b0b2b4;
+  width: 33.3333%;
 }
 
 .dimensions__table__heading {
   font-weight: 550;
-  background-color: #e0e0e0;
+  background-color: #e5e8e8;
   border-right-color: transparent;
 }
 
@@ -205,7 +203,7 @@
   color: transparent;
   background-color: #fff;
   border: 1.3px solid;
-  border-color: #999;
+  border-color: #73818d;
   border-radius: 0;
 }
 
@@ -216,12 +214,11 @@
 .interior-trim__checkbox__container:focus .interior-trim__checkbox__btn {
   color: #666;
   background-color: transparent;
-  border-color: #999;
 }
 
 /* Set the styles when the checkbox is checked */
 .interior-trim__checkbox__container[aria-checked=true] .interior-trim__checkbox__btn {
   color: #fff;
-  background-color: #bbb;
-  border-color: #bbb;
+  background-color: #a7b0b7;
+  border-color: #e3e5e8;
 }

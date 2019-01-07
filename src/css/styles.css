@@ -120,7 +120,7 @@ button {
 
   padding: 0em 0.2em;
   color: #fff;
-  background-color: #0282e3;
+  background-color: #017edb;
 
   transition: color 0.25s ease-in,
     background-color 0.25s ease-in,
@@ -133,13 +133,14 @@ button {
 }
 
 .btn:hover, .btn:focus {
-  color: #0282e3;
-  border-color: #0282e3;
+  color: #017edb;
+  border-color: #017edb;
   background-color: #fff;
 }
 
 .btn--green {
   background-color: #14a65b;
+  border-radius: 0;
 }
 
 .btn--green:hover, .btn--green:focus {
@@ -150,19 +151,20 @@ button {
 
 .btn--white {
   font-weight: 600;
-  color: #6666ff;
+  color: #3e4291;
   background-color: #fff;
-  border-color: #6666ff;
+  border-color: #e8e8e8;
+  border-radius: 0;
 }
 
 .btn--white:hover, .btn--white:focus {
   color: #fff;
-  background-color: #013a65;
-  border-color: #013a65;
+  background-color: #3e4291;
+  border-color: #3e4291;
 }
 
 .btn--offers {
-  margin: 1em 0;
+  margin: 2em 0;
   padding: 0.5em 1.5em;
 }
 
@@ -170,7 +172,7 @@ button {
 .card-container {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.83), rgba(255, 255, 255, 0.9));
   max-width: 300px;
-  padding: 3em 2em;
+  padding: 2em;
 }
 
 .card-container__heading {

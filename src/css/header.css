@@ -21,7 +21,7 @@
 
 .nav-top__list__item {
   display: inline-block;
-  font-size: 0.9em;
+  font-size: 0.85em;
 }
 
 .nav-top__list__item + .nav-top__list__item {
@@ -30,13 +30,18 @@
 
 /* Contrast button style */
 .nav-top__item__contrast.is-active {
-  color: yellow;
+  color: #fafa59;
   background-color: #000;
   border-color: #000;
 }
 
 .nav-top__item__contrast.is-active:hover, .nav-top__item__contrast.is-active:focus {
-  border-color: yellow;
+  border-color: #fafa59;
+}
+
+/* Add a margin on the left to first child buttons of the top navigation list items */
+.nav-top__list__item button:first-child {
+  margin-left: 0.5em;
 }
 
 /* Call us button styles */

@@ -11,7 +11,7 @@
 
 .vehicle-gallery__btn {
   font-size: 4.5em;
-  color: #aaa;
+  color: #c1c1c1;
   border-color: transparent;
   background-color: transparent;
   
@@ -37,7 +37,7 @@
 }
 
 .vehicle-gallery__status {
-  color: #ccc;
+  color: #d7d7d7;
   position: absolute;
   margin: 0;
   bottom: 5%;
