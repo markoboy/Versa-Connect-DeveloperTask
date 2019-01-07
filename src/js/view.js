@@ -37,6 +37,10 @@ class View {
 
       this.renderMainBillboard( this.currentVehicle );
 
+      // Create an itterator and use it in a closure for handling gallery changes.
+      let galleryItterator = 0;
+      this.handleVehicleGallery( this.currentVehicle, galleryItterator );
+
       // Init color buttons.
       this.initColorButtons();
 
@@ -447,6 +451,55 @@ class View {
         <!-- Vehicle interior trim container end -->
       `
     );
+  }
+
+  static async handleVehicleGallery( vehicle, i ) {
+    let { gallery } = vehicle;
+
+    // If the vehicle changes clear the previous timer to prevent bugs.
+    if (this.oldVehicle !== vehicle) clearTimeout(this.galleryTimer);
+
+    // Get the vehicle gallery elements.
+    let vehicleGallery = document.querySelector('.vehicle-gallery');
+    let leftBtn = vehicleGallery.querySelector('.vehicle-gallery__btn--left');
+    let rightBtn = vehicleGallery.querySelector('.vehicle-gallery__btn--right');
+    let status = vehicleGallery.querySelector('.vehicle-gallery__status');
+
+    // Load the image.
+    let imageUrl = this.url.images + gallery[i];
+    imageUrl = await this.loadImage( imageUrl );
+
+    // Display the image and the status.
+    vehicleGallery.style.backgroundImage = `url(${imageUrl})`;
+    status.innerHTML = `${i + 1} / ${gallery.length}`;
+
+    // Set a timeout to change the image.
+    this.galleryTimer = setTimeout( () => {
+      i === gallery.length - 1 ? i = 0 : i += 1;
+      this.handleVehicleGallery(vehicle, i);
+    }, 5000);
+
+    // Set click listeners on buttons to change the images.
+    rightBtn.onclick = () => {
+      i === gallery.length - 1 ? i = 0 : i += 1;
+      clearTimeout(this.galleryTimer);
+      this.handleVehicleGallery(vehicle, i);
+    };
+    leftBtn.onclick = () => {
+      i === 0 ? i = gallery.length - 1 : i -= 1;
+      clearTimeout(this.galleryTimer);
+      this.handleVehicleGallery(vehicle, i);
+    };
+  }
+
+  // Load an image asynchronously providing the url.
+  static loadImage( url ) {
+    return new Promise( (resolve, reject) => {
+      const img = new Image();
+      img.src = url;
+      img.onload = () => resolve( url );
+      img.onerror = (err) => reject(err);
+    });
   }
 
 }
