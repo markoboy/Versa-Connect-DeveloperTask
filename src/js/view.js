@@ -389,9 +389,13 @@ class View {
     } else {
       // If the container already exist then just change their data.
       // Select the image container and change the image.
-      colorDetailContainer.querySelector('.color__image-container').innerHTML = `
-        <img src="${this.url.images}${this.currentColor.image}" alt="${this.currentColor.name} ${this.currentVehicle.name}">
-      `;
+      this.loadImage(this.url.images + this.currentColor.image).then( url => {
+        // Load the image before changing the image.
+        colorDetailContainer.querySelector('.color__image-container').innerHTML = `
+          <img src="${url}" alt="${this.currentColor.name} ${this.currentVehicle.name}">
+        `;
+      });
+
 
       // Select the buttons and handle the change.
       let buttons = colorDetailContainer.querySelectorAll('.color-picker__btn');

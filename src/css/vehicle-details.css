@@ -3,6 +3,7 @@
  */
 .vehicle-details {
   padding: 3em 9em;
+  min-height: 70vh;
 }
 
 .vehicle-details__nav {
