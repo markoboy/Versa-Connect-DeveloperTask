@@ -7,6 +7,7 @@
   background-size: cover;
   background-position: top center;
   position: relative;
+  transition: background 2s ease-in-out;
 }
 
 .vehicle-gallery__btn {
