@@ -24,6 +24,8 @@ class View {
 
     this.currentColor = this.currentVehicle.colors.nonMetallic[0];
 
+    this.initMenuHandler();
+
     this.render();
   }
 
@@ -551,6 +553,24 @@ class View {
         modal.classList.remove('is-closed');
         // Nullify the document onscroll event so that the modal doesnt appear again.
         document.onscroll = null;
+      }
+    };
+  }
+
+  static initMenuHandler() {
+    // Select the menu button
+    let menuBtn = document.querySelector('#menu-btn');
+
+    // Add on click event listener to toggle the menu
+    menuBtn.onclick = () => {
+      // Toggle the menu-is-opened classs in the body element.
+      let isOpened = document.body.classList.toggle('menu-is-opened');
+
+      // Change the icon of the btn to a cross if the menu is opened.
+      if (isOpened) {
+        menuBtn.innerHTML = '<i class="fas fa-times"></i>';
+      } else {
+        menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
       }
     };
   }

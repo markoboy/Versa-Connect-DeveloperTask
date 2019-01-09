@@ -3,8 +3,8 @@
  */
 /* Header logo container */
 .header__logo-container {
-  width: 220px;
-  padding: 0 1.6em;
+  width: 15%;
+  padding: 1em;
   border-right: 0.1em solid #eee;
 }
 
@@ -17,6 +17,8 @@
 .header__nav-top {
   width: 100%;
   border-bottom: 0.1em solid #eee;
+
+  order: -1; /* Display top navigation before bottom one. */
 }
 
 .nav-top__list__item {
@@ -25,7 +27,11 @@
 }
 
 .nav-top__list__item + .nav-top__list__item {
-  margin-left: 2.3em;
+  margin-left: 2em;
+}
+
+.nav-top__list__item:last-child {
+  margin-left: 1em;
 }
 
 /* Contrast button style */
@@ -67,4 +73,119 @@
 .nav-bottom__list__item {
   padding: 1em;
   position: relative; /* For dropdown menus */
+}
+
+/* Menu button container styles */
+.menu-btn-container {
+  flex-grow: 1; /* Get all the width left. */
+  justify-content: flex-end; /* Align on the right. */
+
+  font-size: 2em;
+  color: #003e78;
+  margin-right: 0.5em;
+  display: none;
+}
+
+.menu-btn-container__btn {
+  display: inline-block;
+  width: 34px; /* Set a finger friendly size for the button */
+  padding: 0.1em;
+  margin: 0 0.2em;
+  transition: color 0.25s ease-in;
+}
+
+.menu-btn-container__btn .contact__phone {
+  margin: 0; /* Reset contact phone margin */
+}
+
+.menu-btn-container__btn:hover, .menu-btn-container__btn:focus {
+  color: #0069cc;
+}
+
+/* Medium screen styles */
+@media screen and (max-width: 910px) {
+  body.menu-is-opened {
+    overflow: hidden;
+  }
+
+  .header {
+    width: 100%;
+    flex-flow: row wrap;
+  }
+
+  .header__logo-container {
+    width: 150px; /* Fixed width for the logo */
+    padding: 0.5em;
+    border: none;
+  }
+
+  .header__nav-wrapper {
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0;
+    transition: visibility 0.6s ease-out,
+      opacity 0.6s ease-out,
+      max-height 0.6s ease-out;
+
+    overflow: hidden;
+  }
+
+  .menu-is-opened .header__nav-wrapper {
+    max-height: 90vh;
+    visibility: visible;
+    opacity: 1;
+    overflow-y: auto;
+  }
+
+  .header__nav-top, .header__nav-bottom {
+    order: unset; /* Unset the order for the top navigation to go on the bottom. */
+    padding: 0;
+  }
+
+  .nav-top__list, .nav-bottom__list {
+    text-align: left !important;
+    font-size: 1.1em;
+    font-weight: 600;
+
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .nav-top__list {
+    font-size: 1.3em;
+  }
+
+  .nav-top__list__item + .nav-top__list__item {
+    margin: 0;
+  }
+
+  .nav-top__list__item, .nav-bottom__list__item {
+    padding: 0;
+    background: #eaeaea;
+    border-bottom: 1.5px solid #fff;
+  }
+
+  .nav-bottom__list__item > *, .nav-top__list__item > * {
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 1em;
+  }
+
+  .nav-bottom__list__item > a:hover,
+  .nav-bottom__list__item > a:focus,
+  .nav-top__list__item > a:focus,
+  .nav-top__list__item > a:hover {
+    background-color: #fafafa;
+  }
+
+  .nav-top__list__item:last-child {
+    display: none; /* Hide the telephone */
+  }
+
+  .menu-btn-container {
+    display: inherit; /* Display the menu button */
+  }
+
 }

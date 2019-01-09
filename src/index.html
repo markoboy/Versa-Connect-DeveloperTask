@@ -47,44 +47,23 @@
         </div>
         <!-- Header logo end -->
 
+        <!-- Menu button and phone container start -->
+        <div class="flex flex--center-align menu-btn-container">
+          <a href="tel:03300425909" class="menu-btn-container__btn" aria-label="Call us on 03300425909">
+            <i class="contact__phone fas fa-phone"></i>
+          </a>
+          <button id="menu-btn" class="menu-btn-container__btn" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <!-- Menu button and phone container end -->
+
         <!-- Header wrapper start -->
         <div class="header__nav-wrapper flex flex--column">
 
-          <!-- Header navigation top start -->
-          <nav class="header__nav-top">
-            <ul class="nav-top__list text--right">
-              <li class="nav-top__list__item">
-                Contrast
-                <button class="nav-top__item__contrast is-active btn btn--white">A</button>
-                <button class="nav-top__item__contrast btn btn--white">A</button>
-              </li>
-              <li class="nav-top__list__item">
-                Font Size
-                <button class="btn btn--white">A-</button>
-                <button class="btn btn--white">A</button>
-                <button class="btn btn--white">A+</button>
-              </li>
-              <li class="nav-top__list__item">
-                <a href="#" class="text--shadow">Download a Brochure</a>
-              </li>
-              <li class="nav-top__list__item">
-                <a href="#" class="text--shadow">Blog</a>
-              </li>
-              <li class="nav-top__list__item">
-                <a href="tel:03300425909" class="nav-top__item__contact btn btn--green">
-                  <i class="contact__phone fas fa-phone"></i>
-                  <span class="contact__text">Call us on 0330 042 5909</span>
-                  <!-- Regular circle requires pro -->
-                  <i class="contact__info fas fa-info-circle"></i>
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <!-- Header navigation top end -->
-
           <!-- Header navigation bottom start -->
           <nav class="header__nav-bottom">
-            <ul class="flex flex--space-around">
+            <ul class="flex flex--space-around nav-bottom__list">
               <li class="nav-bottom__list__item">
                 <a href="#" class="text--shadow">New Vehicles</a>
               </li>
@@ -103,6 +82,42 @@
             </ul>
           </nav>
           <!-- Header navigation bottom end -->
+
+          <!-- Header navigation top start -->
+          <nav class="header__nav-top">
+            <ul class="nav-top__list text--right">
+              <li class="nav-top__list__item">
+                <span>
+                  Contrast
+                  <button class="nav-top__item__contrast is-active btn btn--white">A</button>
+                  <button class="nav-top__item__contrast btn btn--white">A</button>
+                </span>
+              </li>
+              <li class="nav-top__list__item">
+                <span>
+                  Font Size
+                  <button class="btn btn--white">A-</button>
+                  <button class="btn btn--white">A</button>
+                  <button class="btn btn--white">A+</button>
+                </span>
+              </li>
+              <li class="nav-top__list__item">
+                <a href="#" class="text--shadow">Download a Brochure</a>
+              </li>
+              <li class="nav-top__list__item">
+                <a href="#" class="text--shadow">Blog</a>
+              </li>
+              <li class="nav-top__list__item">
+                <a href="tel:03300425909" class="nav-top__item__contact btn btn--green">
+                  <i class="contact__phone fas fa-phone"></i>
+                  <span class="contact__text">Call us on 0330 042 5909</span>
+                  <!-- Regular circle requires pro -->
+                  <i class="contact__info fas fa-info-circle"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- Header navigation top end -->
 
         </div>
         <!-- Header wrapper end -->
@@ -336,7 +351,7 @@
 
     <!-- Scripts -->
     <!-- build:js js/main.min.js -->
-    <script type="text/javascript" src="../node_modules/regenerator-runtime/runtime.js"></script>
+    <!-- <script type="text/javascript" src="../node_modules/regenerator-runtime/runtime.js"></script> -->
     <script type="text/javascript" src="./js/controller.js"></script>
     <script type="text/javascript" src="./js/view.js"></script>
     <!-- endbuild -->
