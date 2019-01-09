@@ -26,6 +26,9 @@ class View {
 
     this.initMenuHandler();
 
+    // Add a listener to toggle vehicle model navigation.
+    this.toggleClass('#model-nav__btn', '.vehicle-nav', 'is-opened');
+
     this.render();
   }
 
@@ -573,6 +576,24 @@ class View {
         menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
       }
     };
+  }
+
+  /**
+   * Add an event listener to a button that toggles a class.
+   * @param {string} btn The button to add the listener
+   * @param {string} selector The container to toggle the class
+   * @param {string} name The class name
+   */
+  static toggleClass( btn, selector, name ) {
+    // Select the btn to add the listener.
+    btn = document.querySelector(btn);
+    // Select the container to add the class.
+    selector = document.querySelector(selector);
+
+    // Add a click event listener to toggle the class.
+    btn.addEventListener('click', () => {
+      selector.classList.toggle(name);
+    });
   }
 
   // Load an image asynchronously providing the url.

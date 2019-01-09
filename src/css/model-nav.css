@@ -92,3 +92,79 @@
 .vehicle-nav__item__link.is-active::after {
   transform: scaleX(1);
 }
+
+/* Vehicle model navigation button container styles */
+.model-nav__btn-container {
+  flex-grow: 1;
+  margin-right: 1em;
+  font-size: 1.6em;
+  display: none;
+}
+
+.model-nav__btn-container__btn {
+  width: 34px;
+}
+
+/* Vehicle model navigation style for smaller screens */
+@media only screen and (max-width: 800px) {
+  .model-nav__container {
+    flex-flow: row wrap;
+    position: relative; /* Relative position for making vehicle-nav overflow */
+  }
+
+  .model-nav__btn-container {
+    display: block;
+  }
+
+  .model-nav__listbox {
+    flex-shrink: 0;
+  }
+
+  .vehicle-nav {
+    position: absolute;
+    top: 100%;
+
+    background-color: #eaeaea;
+
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0;
+
+    transition: visibility 0.2s ease-out,
+      opacity 0.2s ease-out,
+      max-height 0.2s ease-out;
+  }
+
+  .vehicle-nav.is-opened {
+    visibility: visible;
+    opacity: 1;
+    max-height: 350px;
+  }
+
+  .vehicle-nav__item + .vehicle-nav__item {
+    margin: 0;
+  }
+
+  .vehicle-nav__item__link {
+    color: #003e78;
+  }
+
+  .vehicle-nav__item__link:hover {
+    color: #0069cc;
+  }
+
+}
+
+@media only screen and (max-width: 510px) {
+  .vehicle-nav__item {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .vehicle-nav__item__link {
+    display: inline-block;
+    width: 100%;
+  }
+
+}
