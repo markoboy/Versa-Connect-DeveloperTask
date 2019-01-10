@@ -563,6 +563,8 @@ class View {
   static initMenuHandler() {
     // Select the menu button
     let menuBtn = document.querySelector('#menu-btn');
+    // Select the header to get its height for correct height in mobile different browsers.
+    let header = document.querySelector('.header');
 
     // Add on click event listener to toggle the menu
     menuBtn.onclick = () => {
@@ -574,10 +576,14 @@ class View {
         menuBtn.innerHTML = '<i class="fas fa-times"></i>';
         // Hide overflowY to prevent page from scrolling when menu is opened.
         document.documentElement.style.overflowY = 'hidden';
+        // Set the header navigation correct maxHeight based on different device's browsers
+        document.querySelector('.header__nav-wrapper').style.maxHeight = window.innerHeight - header.offsetHeight + 'px';
       } else {
         menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
         // Remove the style attribute to make page scrollable again.
         document.documentElement.removeAttribute('style');
+        // Remove the maxHeight style.
+        document.querySelector('.header__nav-wrapper').removeAttribute('style');
       }
     };
   }
