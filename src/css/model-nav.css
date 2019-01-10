@@ -164,6 +164,7 @@
 
   .vehicle-nav__item__link {
     display: inline-block;
+    box-sizing: border-box;
     width: 100%;
   }
 

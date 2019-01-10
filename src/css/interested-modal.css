@@ -17,6 +17,8 @@
   margin: 0;
   border: none;
   border-radius: 4px;
+  box-sizing: border-box;
+  display: inline-block;
 }
 
 .interested-modal__form__input::placeholder {
@@ -30,10 +32,11 @@
 .interested-modal__form__input[type="text"],
 .interested-modal__form__input[type="tel"] {
   background-color: #eaeaea;
+  max-width: calc(50% - 32px);
 }
 
 .interested-modal__form__input--btn {
-  padding: 0.5em 0.7em;
+  width: 48px;
   background-color: #003e78;
   border: 1px solid #003e78;
 }
@@ -64,7 +67,7 @@
   top: 0;
   right: 0;
 
-  padding: 0.5em 1em;
+  padding: 0.2em 0.5em;
 
   color: darkred;
   font-size: 1.2em;
@@ -74,4 +77,25 @@
   color: red;
   text-shadow: 0 1px 10px darkgray;
   transition: all 0.25s ease-in;
+}
+
+@media only screen and (max-width: 520px) {
+  .interested-modal {
+    max-width: 100%;
+    right: 0;
+    box-sizing: border-box;
+  }
+
+  .interested-modal__form {
+    flex-flow: column;
+  }
+
+  .interested-modal__form__input {
+    margin-bottom: 0.5em;
+    min-width: 100%;
+  }
+
+  .interested-modal__form__input + .interested-modal__form__input {
+    margin-left: 0;
+  }
 }

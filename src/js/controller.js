@@ -6,7 +6,7 @@
  */
 
 // The server's API. TODO: Change with github repo page url.
-const url = 'http://localhost:3000';
+const url = '.';
 
 /**
  * Get the vehicle data from the json file.

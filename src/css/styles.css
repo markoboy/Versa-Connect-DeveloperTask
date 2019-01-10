@@ -195,3 +195,17 @@ button {
 .is-hidden {
   display: none;
 }
+
+/* Media screen styles */
+@media only screen and (max-width: 740px) {
+  .card-container {
+    max-width: 100%;
+    display: flex; /* Display as a flex to center button */
+    flex-flow: column nowrap;
+  }
+
+  .card-container__btn {
+    max-width: 70%;
+    align-self: center;
+  }
+}

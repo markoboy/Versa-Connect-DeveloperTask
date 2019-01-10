@@ -5,3 +5,15 @@
   padding: 4em 9em;
   font-size: 1.05em;
 }
+
+@media only screen and (max-width: 1000px) {
+  .vehicle-description {
+    padding: 2em;
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  .vehicle-description {
+    padding: 1em;
+  }
+}

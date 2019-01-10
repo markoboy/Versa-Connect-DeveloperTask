@@ -8,3 +8,18 @@
   background-size: cover;
   padding: 2em 9em;
 }
+
+@media only screen and (max-width: 1000px) {
+  .keep-you-going {
+    min-height: 45vh;
+    padding: 2em;
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  .keep-you-going {
+    min-height: 20vh;
+    padding: 1em;
+  }
+
+}

@@ -91,6 +91,10 @@
   margin: 0 auto; /* Center the container */
 }
 
+.color__color-picker {
+  padding: 0.5em;
+}
+
 .color-picker__non-metallic, .color-picker__metallic {
   font-weight: 600;
   font-size: 0.9em;
@@ -200,6 +204,7 @@
   height: 34px;
   font-size: 1.2em;
   padding: 0.2em;
+  margin-left: 0.3em;
   color: transparent;
   background-color: #fff;
   border: 1.3px solid;
@@ -221,4 +226,67 @@
   color: #fff;
   background-color: #a7b0b7;
   border-color: #e3e5e8;
+}
+
+@media only screen and (max-width: 1000px) {
+  .vehicle-details {
+    min-height: 45vh;
+    padding: 2em;
+  }
+
+  .interior-trim__top-image {
+    min-height: 280px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .vehicle-details__dimensions {
+    flex-flow: row wrap;
+  }
+
+  .dimensions__image-container, .dimensions__table {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  .vehicle-details {
+    min-height: 20vh;
+    padding: 1em;
+  }
+
+  .interior-trim__top-image {
+    min-height: 200px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .color__color-picker {
+    overflow-x: auto;
+    justify-content: initial;
+  }
+
+  .color-picker__metallic, .color-picker__non-metallic {
+    white-space: nowrap;
+  }
+
+}
+
+@media only screen and (max-width: 560px) {
+  .vehicle-details__nav {
+    overflow-y: auto;
+  }
+
+  .vehicle-details__nav__item {
+    min-width: 180px;
+  }
+
+  .interior-trim__list {
+    overflow-x: auto;
+  }
+
+  .interior-trim__list__item {
+    min-width: 270px;
+  }
 }

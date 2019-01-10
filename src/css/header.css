@@ -104,8 +104,13 @@
 
 /* Medium screen styles */
 @media screen and (max-width: 910px) {
+  body {
+    overflow-y: auto;
+  }
+
   body.menu-is-opened {
     overflow: hidden;
+    position: relative;
   }
 
   .header {
@@ -132,7 +137,7 @@
   }
 
   .menu-is-opened .header__nav-wrapper {
-    max-height: 90vh;
+    max-height: calc(100vh - 66px);
     visibility: visible;
     opacity: 1;
     overflow-y: auto;

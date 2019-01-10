@@ -11,7 +11,7 @@
   align-self: flex-end;
   color: rgb(157, 165, 173);
   font-size: 0.9em;
-  max-width: 450px;
+  max-width: 40%;
 }
 
 .footer__phrase p {
@@ -41,4 +41,38 @@
 .footer__link:hover, .footer__link:focus {
   color: #fff;
   text-shadow: 0 1px 8px darkgray;
+}
+
+@media only screen and (max-width: 1255px) {
+  .footer__nav__list + .footer__nav__list {
+    margin-left: 2em;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .footer{
+    padding: 2em;
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  .footer {
+    padding: 1em;
+  }
+
+  .footer__wrapper {
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer__phrase {
+    max-width: 100%;
+  }
+
+  .footer__nav {
+    width: 100%;
+    justify-content: space-around; 
+  }
+
 }

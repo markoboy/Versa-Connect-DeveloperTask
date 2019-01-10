@@ -422,7 +422,7 @@ class View {
   static generateInteriorList( interior ) {
     // Create the list container.
     let listContainer = document.createElement('ul');
-    listContainer.classList.add('flex', 'flex--space-between');
+    listContainer.classList.add('flex', 'flex--space-between', 'interior-trim__list');
 
     let activeTrim = interior.trim[2];
 
@@ -572,8 +572,12 @@ class View {
       // Change the icon of the btn to a cross if the menu is opened.
       if (isOpened) {
         menuBtn.innerHTML = '<i class="fas fa-times"></i>';
+        // Hide overflowY to prevent page from scrolling when menu is opened.
+        document.documentElement.style.overflowY = 'hidden';
       } else {
         menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        // Remove the style attribute to make page scrollable again.
+        document.documentElement.removeAttribute('style');
       }
     };
   }
